@@ -10,7 +10,10 @@ export const es = {
     tagline: "Del mar y de la dehesa a tu mesa",
     phone: "673 895 151",
     phoneHref: "tel:+34673895151",
-    location: "Los Barrios",
+    address: {
+      street: "Calle Padre Damaso, 3",
+      locality: "11370 Los Barrios, Cádiz",
+    },
     mapsUrl: "https://maps.app.goo.gl/Kt8qxrKDuZVsSLQZ8",
     social: [
       { icon: "instagram", label: "Instagram", href: "https://www.instagram.com/calle_13_losbarrios" },
@@ -29,7 +32,7 @@ export const es = {
 
   header: {
     nav: [
-      { label: "La carta", href: "#carta" },
+      { label: "Carta", href: "#carta" },
       { label: "Galería", href: "#galeria" },
       { label: "Servicios", href: "#servicios" },
       { label: "Preguntas", href: "#faq" },
@@ -189,7 +192,6 @@ export const es = {
     title: "¿Hablamos?",
     text: "Llámanos para reservar mesa, preguntar por la carta o encargar para un grupo. Te atendemos personalmente.",
     cta: "Llamar al 673 895 151",
-    directions: "Cómo llegar",
     followUs: "Síguenos",
   },
 
@@ -197,7 +199,6 @@ export const es = {
     tagline: "Del mar y de la dehesa a tu mesa.",
     navTitle: "Secciones",
     contactTitle: "Contacto",
-    followUs: "Síguenos",
     rights: "Todos los derechos reservados.",
     madeBy: "Hecho con ♥ por",
   },

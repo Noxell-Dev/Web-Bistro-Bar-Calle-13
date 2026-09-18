@@ -30,11 +30,11 @@ const contact = es.contact;
         rel="noopener"
         class="inline-flex items-center gap-2 text-lg text-white/80 underline decoration-white/30 underline-offset-4 transition hover:text-white"
       >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0">
           <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
           <circle cx="12" cy="10" r="3" />
         </svg>
-        {contact.directions} · {es.site.location}
+        <span>{es.site.address.street}, {es.site.address.locality}</span>
       </a>
       <div class="flex items-center gap-4">
         <span class="text-sm text-white/60">{contact.followUs}</span>

@@ -24,6 +24,14 @@ const restaurantJsonLd = {
   priceRange: "€€",
   url: canonical,
   logo: ogImage,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: es.site.address.street,
+    postalCode: "11370",
+    addressLocality: "Los Barrios",
+    addressRegion: "Cádiz",
+    addressCountry: "ES",
+  },
   hasMap: es.site.mapsUrl,
   sameAs: es.site.social.map((s) => s.href),
 };

@@ -1,0 +1,60 @@
+---
+import { es } from "@i18n/es";
+
+const hero = es.hero;
+---
+
+<section class="relative overflow-hidden bg-paper pt-28 pb-14 sm:pt-36 sm:pb-20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="grid items-center gap-10 md:grid-cols-[1.1fr_0.9fr] md:gap-14">
+      <div>
+        <p class="inline-flex items-center gap-2 rounded-full border border-line bg-cream px-4 py-1.5 text-xs font-semibold tracking-wide text-brand uppercase">
+          {hero.eyebrow}
+        </p>
+        <h1 class="mt-5 font-display text-brand">
+          <span class="block text-2xl font-semibold sm:text-3xl">{hero.titleBusiness}</span>
+          <span class="mt-2 block text-4xl font-bold leading-[1.08] text-ink sm:text-6xl">
+            {hero.titleClaim}
+          </span>
+        </h1>
+        <div class="mt-5 h-1 w-24 rounded-full bg-accent" aria-hidden="true"></div>
+        <p class="mt-5 max-w-xl text-lg leading-relaxed text-muted">
+          {hero.subtitle}
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <a
+            href="#carta"
+            class="inline-flex items-center justify-center rounded-full bg-brand px-7 py-3.5 text-base font-semibold text-white hover:bg-brand-deep transition-colors"
+          >
+            {hero.primaryCta}
+          </a>
+          <a
+            href={es.site.phoneHref}
+            class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-brand px-7 py-3 text-base font-semibold text-brand hover:bg-brand hover:text-white transition-colors"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            {hero.secondaryCta}
+          </a>
+        </div>
+      </div>
+
+      <div class="mx-auto w-full max-w-sm md:max-w-none">
+        <figure class="relative">
+          <div class="absolute -inset-3 rounded-[2rem] bg-cream" aria-hidden="true"></div>
+          <img
+            src="/images/logo-calle13.webp"
+            alt={hero.logoAlt}
+            width="800"
+            height="800"
+            class="relative aspect-square w-full rounded-[1.6rem] border border-line object-cover shadow-xl"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>

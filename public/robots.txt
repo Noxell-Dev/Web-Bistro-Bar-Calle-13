@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bistrobarcalle13.es/sitemap-index.xml

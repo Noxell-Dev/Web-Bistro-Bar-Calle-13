@@ -1,0 +1,106 @@
+---
+import { es } from "@i18n/es";
+
+const { nav, cta, menuOpen, menuClose } = es.header;
+---
+
+<header class="fixed inset-x-0 top-0 z-50 bg-paper/95 backdrop-blur border-b border-line">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="flex h-16 items-center justify-between gap-4 sm:h-20">
+      <a href="#contenido" class="flex items-center gap-3 shrink-0" aria-label="Bistro Bar Calle 13 — inicio">
+        <img
+          src="/images/logo-calle13.webp"
+          alt=""
+          width="800"
+          height="800"
+          class="h-11 w-11 rounded-full object-cover ring-1 ring-line sm:h-12 sm:w-12"
+          loading="eager"
+          decoding="async"
+        />
+        <span class="font-display text-xl font-semibold text-brand leading-none sm:text-2xl">
+          Calle 13
+          <span class="block font-sans text-[0.65rem] font-medium tracking-wide text-muted uppercase">
+            Bistro &amp; Bar
+          </span>
+        </span>
+      </a>
+
+      <nav class="hidden md:block" aria-label="Navegación principal">
+        <ul class="flex items-center gap-7">
+          {
+            nav.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="text-[0.95rem] font-medium text-ink/80 hover:text-brand transition-colors"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a
+          href={es.site.phoneHref}
+          class="hidden sm:inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-deep transition-colors"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          {cta} · {es.site.phone}
+        </a>
+
+        <button
+          id="menu-btn"
+          type="button"
+          class="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-lg text-ink hover:bg-cream"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label={menuOpen}
+          data-label-open={menuOpen}
+          data-label-close={menuClose}
+        >
+          <svg id="icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+          <svg id="icon-close" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden border-t border-line bg-paper" role="dialog" aria-label="Menú de navegación">
+    <nav aria-label="Navegación móvil">
+      <ul class="px-4 py-3 space-y-1">
+        {
+          nav.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="mobile-link block rounded-lg px-3 py-3 text-base font-medium text-ink hover:bg-cream"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+        <li class="pt-2 pb-1">
+          <a
+            href={es.site.phoneHref}
+            class="mobile-link flex items-center justify-center gap-2 rounded-full bg-brand px-5 py-3 text-base font-semibold text-white"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            {cta} · {es.site.phone}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

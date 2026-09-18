@@ -10,6 +10,12 @@ export const es = {
     tagline: "Del mar y de la dehesa a tu mesa",
     phone: "673 895 151",
     phoneHref: "tel:+34673895151",
+    location: "Los Barrios",
+    mapsUrl: "https://maps.app.goo.gl/Kt8qxrKDuZVsSLQZ8",
+    social: [
+      { icon: "instagram", label: "Instagram", href: "https://www.instagram.com/calle_13_losbarrios" },
+      { icon: "facebook", label: "Facebook", href: "https://www.facebook.com/p/Calle-13-Bistro-Bar-100069877994307" },
+    ],
     // Dominio PROVISIONAL: confirmar el definitivo con el negocio.
     url: "https://bistrobarcalle13.es",
     locale: "es_ES",
@@ -183,6 +189,8 @@ export const es = {
     title: "¿Hablamos?",
     text: "Llámanos para reservar mesa, preguntar por la carta o encargar para un grupo. Te atendemos personalmente.",
     cta: "Llamar al 673 895 151",
+    directions: "Cómo llegar",
+    followUs: "Síguenos",
     note: "Bistro Bar Calle 13",
   },
 
@@ -190,6 +198,7 @@ export const es = {
     tagline: "Del mar y de la dehesa a tu mesa.",
     navTitle: "Secciones",
     contactTitle: "Contacto",
+    followUs: "Síguenos",
     rights: "Todos los derechos reservados.",
     madeBy: "Hecho con ♥ por",
   },

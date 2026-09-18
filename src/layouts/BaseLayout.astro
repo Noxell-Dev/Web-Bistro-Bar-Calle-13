@@ -24,6 +24,8 @@ const restaurantJsonLd = {
   priceRange: "€€",
   url: canonical,
   logo: ogImage,
+  hasMap: es.site.mapsUrl,
+  sameAs: es.site.social.map((s) => s.href),
 };
 
 const faqJsonLd = {

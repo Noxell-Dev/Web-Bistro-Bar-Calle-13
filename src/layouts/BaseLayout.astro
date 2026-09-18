@@ -79,6 +79,10 @@ const faqJsonLd = {
       set:html={JSON.stringify(restaurantJsonLd)}
     />
     <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+    <script>
+      import { inject } from '@vercel/analytics';
+      inject();
+    </script>
   </head>
   <body>
     <a

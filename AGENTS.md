@@ -4,7 +4,9 @@ Convenciones del proyecto para quien (o lo que) lo toque en el futuro.
 
 ## Stack
 
-- Astro 5 + TypeScript estricto + Tailwind CSS v4 (plugin de Vite). Sitio estático, sin backend.
+- Astro 7 + TypeScript estricto + Tailwind CSS v4 (plugin de Vite). Sitio estático, sin backend.
+  Sin `overrides` de Vite en `package.json`: Astro 7 usa Vite 8 y el pin a Vite 6
+  (necesario en la época de Astro 5) rompe el build.
 - Fuentes autoalojadas con `@fontsource-variable/fraunces` e `@fontsource-variable/inter`
   (importadas en `src/styles/global.css`). No añadir Google Fonts por `<link>`.
 - Sitemap: **nunca** crear `sitemap.xml` a mano; lo genera `@astrojs/sitemap` en cada build.

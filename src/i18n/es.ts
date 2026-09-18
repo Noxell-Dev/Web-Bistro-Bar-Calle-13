@@ -191,7 +191,6 @@ export const es = {
     cta: "Llamar al 673 895 151",
     directions: "Cómo llegar",
     followUs: "Síguenos",
-    note: "Bistro Bar Calle 13",
   },
 
   footer: {

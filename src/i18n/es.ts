@@ -8,7 +8,6 @@ export const es = {
   site: {
     name: "Bistro Bar Calle 13",
     tagline: "Del mar y de la dehesa a tu mesa",
-    group: "Grupo Hostelero Samuel Manzanares",
     phone: "673 895 151",
     phoneHref: "tel:+34673895151",
     // Dominio PROVISIONAL: confirmar el definitivo con el negocio.
@@ -25,6 +24,7 @@ export const es = {
   header: {
     nav: [
       { label: "La carta", href: "#carta" },
+      { label: "Galería", href: "#galeria" },
       { label: "Servicios", href: "#servicios" },
       { label: "Preguntas", href: "#faq" },
       { label: "Contacto", href: "#contacto" },
@@ -35,7 +35,6 @@ export const es = {
   },
 
   hero: {
-    eyebrow: "Bistro & Bar · Grupo Hostelero Samuel Manzanares",
     titleBusiness: "Bistro Bar Calle 13",
     titleClaim: "Del mar y de la dehesa a tu mesa.",
     subtitle:
@@ -104,6 +103,50 @@ export const es = {
     fullLabel: "Ración",
   },
 
+  gallery: {
+    eyebrow: "Galería",
+    title: "Platos de la casa",
+    subtitle: "Una muestra de lo que sale de nuestra cocina.",
+    images: [
+      {
+        src: "/images/galeria/chuleton-brasa.webp",
+        alt: "Chuletón a la brasa fileteado, con patatas fritas y verduras salteadas",
+        width: 885,
+        height: 900,
+      },
+      {
+        src: "/images/galeria/calamar-frito.webp",
+        alt: "Calamar entero frito con ensalada, tomate y limón",
+        width: 885,
+        height: 900,
+      },
+      {
+        src: "/images/galeria/arroz-negro.webp",
+        alt: "Arroz negro con gambones servido en paella",
+        width: 680,
+        height: 510,
+      },
+      {
+        src: "/images/galeria/calamar-algas.webp",
+        alt: "Calamares fritos con ensalada de algas",
+        width: 382,
+        height: 510,
+      },
+      {
+        src: "/images/galeria/filete-empanado.webp",
+        alt: "Filete empanado con huevos fritos, patatas y pimientos",
+        width: 382,
+        height: 510,
+      },
+      {
+        src: "/images/galeria/pulpo-brasa.webp",
+        alt: "Pata de pulpo a la brasa con tomates cherry",
+        width: 562,
+        height: 510,
+      },
+    ],
+  },
+
   faq: {
     eyebrow: "Preguntas frecuentes",
     title: "Dudas habituales",
@@ -140,7 +183,7 @@ export const es = {
     title: "¿Hablamos?",
     text: "Llámanos para reservar mesa, preguntar por la carta o encargar para un grupo. Te atendemos personalmente.",
     cta: "Llamar al 673 895 151",
-    note: "Bistro Bar Calle 13 · Grupo Hostelero Samuel Manzanares",
+    note: "Bistro Bar Calle 13",
   },
 
   footer: {

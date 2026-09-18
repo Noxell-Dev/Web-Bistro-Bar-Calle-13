@@ -73,18 +73,11 @@ src/
 - **Carta:** edita `src/data/menu.ts` (`MenuCategory` → `items`). Cada plato admite `price`
   (único) o `halfPrice`/`fullPrice` (1/2 ración y ración). La sección *Carta* se genera sola.
 - **Textos:** edita `src/i18n/es.ts`. Ningún texto visible está hardcodeado en los componentes.
+- **Galería:** añade fotos a `public/images/galeria/` (WebP, ~900 px) y regístralas en
+  `src/i18n/es.ts` (`gallery.images`) con `alt` descriptivo, `width` y `height`.
 - **Secciones:** componentes en `src/components/`, composición en `src/pages/index.astro`.
 - **Colores/tipos:** tokens en `src/styles/global.css` (`@theme`): `brand` (azul),
   `accent` (rojo), `cream`, `ink`; `font-display` (Fraunces), `font-sans` (Inter).
 - **Idiomas:** hoy es monolingüe ES. Para añadir inglés: crear `src/i18n/en.ts` con la misma
   forma, páginas en `src/pages/en/` y activar el bloque `i18n` de `astro.config.mjs`
   (`prefixDefaultLocale: false`).
-
-## Notas del negocio
-
-- Teléfono de contacto/WhatsApp: **673 895 151** (`tel:+34673895151`).
-  La carta impresa indica 647 614 663 (teléfono del grupo); en la web se usa el facilitado
-  por el negocio. Si cambia, actualizar `src/i18n/es.ts` (`site.phone`, `site.phoneHref`)
-  y el JSON-LD de `src/layouts/BaseLayout.astro`.
-- La carta de `src/data/menu.ts` transcribe la carta impresa (septiembre 2026).
-  Precios con IVA incluido.

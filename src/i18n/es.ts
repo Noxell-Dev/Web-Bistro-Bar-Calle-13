@@ -15,6 +15,13 @@ export const es = {
       locality: "11370 Los Barrios, Cádiz",
     },
     mapsUrl: "https://maps.app.goo.gl/Kt8qxrKDuZVsSLQZ8",
+    reviewsUrl:
+      "https://www.google.com/maps/place/Bistro+Bar+Calle+13+Los+Barrios+(+Samuel+Manzanares+)/@36.1809212,-5.4908174,17z/data=!4m8!3m7!1s0xd0ced2f368ed86b:0xe9fdf3f244f2168c!8m2!3d36.1809169!4d-5.4882425!9m1!1b1!16s%2Fg%2F11ln526g84?entry=ttu&g_ep=EgoyMDI2MDkxNi4wIKXMDSoASAFQAw%3D%3D",
+    // Nota y nº de reseñas de Google Maps; actualizar junto con src/data/reviews.ts.
+    googleRating: {
+      value: 4.6,
+      reviewCount: 402,
+    },
     social: [
       { icon: "instagram", label: "Instagram", href: "https://www.instagram.com/calle_13_losbarrios" },
       { icon: "facebook", label: "Facebook", href: "https://www.facebook.com/p/Calle-13-Bistro-Bar-100069877994307" },
@@ -34,7 +41,7 @@ export const es = {
     nav: [
       { label: "Carta", href: "#carta" },
       { label: "Galería", href: "#galeria" },
-      { label: "Servicios", href: "#servicios" },
+      { label: "Reseñas", href: "#resenas" },
       { label: "Preguntas", href: "#faq" },
       { label: "Contacto", href: "#contacto" },
     ],
@@ -61,45 +68,6 @@ export const es = {
       { value: "2,50 €", label: "tapas desde" },
       { value: "100%", label: "postres de la casa" },
       { value: "2", label: "mundos: el mar y la dehesa" },
-    ],
-  },
-
-  services: {
-    eyebrow: "Servicios",
-    title: "Qué vas a encontrar",
-    subtitle:
-      "Una carta amplia pensada para picar, compartir o sentarse a comer en serio.",
-    items: [
-      {
-        title: "Tapas y tostas",
-        text: "Montaditos, tostón de langostino y tostas para abrir boca desde 2,50 €.",
-        icon: "tapa",
-      },
-      {
-        title: "Para compartir",
-        text: "Bravas, provolone, croquetas y jamón ibérico BEHER en el centro de la mesa.",
-        icon: "compartir",
-      },
-      {
-        title: "Carnes a la brasa",
-        text: "Ibérico a la brasa, churrasco y chuletón de vaca rubia gallega madurada.",
-        icon: "brasa",
-      },
-      {
-        title: "Del mar",
-        text: "Pescaíto frito, tortilla de camarones, atún rojo y pata de pulpo.",
-        icon: "mar",
-      },
-      {
-        title: "Revueltos y hamburguesa",
-        text: "Revueltos con huevos de campo y hamburguesa americana completa.",
-        icon: "revuelto",
-      },
-      {
-        title: "Postres de la casa",
-        text: "Arroz con leche, tocinillo de cielo y tarta de queso al horno.",
-        icon: "postre",
-      },
     ],
   },
 
@@ -154,6 +122,14 @@ export const es = {
         height: 510,
       },
     ],
+  },
+
+  reviews: {
+    eyebrow: "Reseñas",
+    title: "Lo que dicen nuestros clientes",
+    subtitle: "Opiniones reales de quienes ya han pasado por nuestra casa.",
+    googleLabel: "reseñas en Google",
+    sourceLabel: "Reseña de Google",
   },
 
   faq: {

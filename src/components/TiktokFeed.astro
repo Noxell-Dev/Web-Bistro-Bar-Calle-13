@@ -29,25 +29,67 @@ const t = es.tiktok;
     </p>
 
     {tiktokVideos.length > 0 && (
-      <div class="mt-10 grid gap-8 md:grid-cols-3">
-        {tiktokVideos.map((video) => (
-          <div class="flex justify-center">
-            <blockquote
-              class="tiktok-embed"
-              cite={video.url}
-              data-video-id={video.id}
-              style="max-width: 605px; min-width: 325px;"
-            >
-              <section>
-                <a target="_blank" title="@samuelmanzanaresv" href={video.url}>
-                  @samuelmanzanaresv
-                </a>
-              </section>
-            </blockquote>
+      <div
+        id="videos-grid"
+        data-videos={JSON.stringify(tiktokVideos)}
+        class="mt-10 grid gap-8 md:grid-cols-3"
+      >
+        {tiktokVideos.map(() => (
+          <div class="flex justify-center" aria-hidden="true">
+            <div class="aspect-[9/16] w-full max-w-[325px] animate-pulse rounded-xl bg-sand"></div>
           </div>
         ))}
       </div>
     )}
   </div>
-  <script async src="https://www.tiktok.com/embed.js"></script>
 </section>
+
+<script>
+  // Los embeds de TikTok son pesados: solo se cargan cuando la sección
+  // está a punto de entrar en pantalla, para no lastrar la carga inicial.
+  const grid = document.getElementById("videos-grid");
+  if (grid) {
+    const loadVideos = () => {
+      const videos = JSON.parse(grid.dataset.videos || "[]");
+      grid.innerHTML = videos
+        .map(
+          (v) => `
+        <div class="flex justify-center">
+          <blockquote
+            class="tiktok-embed"
+            cite="${v.url}"
+            data-video-id="${v.id}"
+            style="max-width: 605px; min-width: 325px;"
+          >
+            <section>
+              <a target="_blank" title="@samuelmanzanaresv" href="${v.url}">
+                @samuelmanzanaresv
+              </a>
+            </section>
+          </blockquote>
+        </div>`,
+        )
+        .join("");
+      const s = document.createElement("script");
+      s.src = "https://www.tiktok.com/embed.js";
+      s.async = true;
+      document.body.appendChild(s);
+    };
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              loadVideos();
+              io.disconnect();
+            }
+          });
+        },
+        { rootMargin: "400px" },
+      );
+      io.observe(grid);
+    } else {
+      loadVideos();
+    }
+  }
+</script>

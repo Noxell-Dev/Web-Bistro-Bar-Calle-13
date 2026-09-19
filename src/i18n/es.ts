@@ -24,7 +24,8 @@ export const es = {
     },
     social: [
       { icon: "instagram", label: "Instagram", href: "https://www.instagram.com/calle_13_losbarrios" },
-      { icon: "facebook", label: "Facebook", href: "https://www.facebook.com/p/Calle-13-Bistro-Bar-100069877994307" },
+      { icon: "facebook", label: "Facebook", href: "https://www.facebook.com/profile.php?id=61570425544020" },
+      { icon: "tiktok", label: "TikTok", href: "https://www.tiktok.com/@samuelmanzanaresv" },
     ],
     // Dominio PROVISIONAL: confirmar el definitivo con el negocio.
     url: "https://bistrobarcalle13.es",

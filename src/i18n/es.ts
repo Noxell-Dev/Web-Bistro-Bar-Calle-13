@@ -165,7 +165,7 @@ export const es = {
 
   contact: {
     eyebrow: "Contacto",
-    title: "¿Hablamos?",
+    title: "Reserva tu mesa",
     text: "Llámanos para reservar mesa, preguntar por la carta o encargar para un grupo. Te atendemos personalmente.",
     cta: "Llamar al 673 895 151",
     followUs: "Síguenos",

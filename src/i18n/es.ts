@@ -43,7 +43,7 @@ export const es = {
       { label: "Carta", href: "#carta" },
       { label: "Galería", href: "#galeria" },
       { label: "Reseñas", href: "#resenas" },
-      { label: "Vídeos", href: "#tiktok" },
+      { label: "Vídeos", href: "#videos" },
       { label: "Preguntas", href: "#faq" },
       { label: "Contacto", href: "#contacto" },
     ],

@@ -49,8 +49,6 @@ export const menu: MenuCategory[] = [
     id: "tapas",
     title: "Tapas",
     items: [
-      { name: "Jamón de cebo", price: "21,00 €" },
-      { name: "Jamón de bellota", price: "24,00 €" },
       { name: "Montadito de pollo/lomo", price: "2,50 €" },
       { name: "Montadito Chicharrones", price: "3,00 €" },
       { name: "Pinchito de pollo", price: "3,00 €" },
@@ -60,6 +58,8 @@ export const menu: MenuCategory[] = [
         name: "Queso Camembert frito con mermelada de frambuesa",
         price: "4,50 €",
       },
+      { name: "Jamón de cebo", price: "21,00 €" },
+      { name: "Jamón de bellota", price: "24,00 €" },
       { name: "Salsa extra", price: "0,50 €" },
     ],
   },

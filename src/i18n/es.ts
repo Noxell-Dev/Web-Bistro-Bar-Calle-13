@@ -43,7 +43,7 @@ export const es = {
       { label: "Carta", href: "#carta" },
       { label: "Galería", href: "#galeria" },
       { label: "Reseñas", href: "#resenas" },
-      { label: "TikTok", href: "#tiktok" },
+      { label: "Vídeos", href: "#tiktok" },
       { label: "Preguntas", href: "#faq" },
       { label: "Contacto", href: "#contacto" },
     ],
@@ -166,7 +166,7 @@ export const es = {
   },
 
   tiktok: {
-    eyebrow: "TikTok",
+    eyebrow: "Vídeos",
     title: "La casa, en vídeo",
     text: "Lo último de nuestro TikTok, actualizado cada semana.",
     profileCta: "Ver perfil en TikTok",

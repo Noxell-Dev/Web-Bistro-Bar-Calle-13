@@ -43,6 +43,7 @@ export const es = {
       { label: "Carta", href: "#carta" },
       { label: "Galería", href: "#galeria" },
       { label: "Reseñas", href: "#resenas" },
+      { label: "TikTok", href: "#tiktok" },
       { label: "Preguntas", href: "#faq" },
       { label: "Contacto", href: "#contacto" },
     ],
@@ -162,6 +163,14 @@ export const es = {
         a: "Sí. Pregúntanos al hacer tu pedido y te informamos de los alérgenos de cada plato sin problema.",
       },
     ],
+  },
+
+  tiktok: {
+    eyebrow: "TikTok",
+    title: "La casa, en vídeo",
+    text: "Lo último de nuestro TikTok, actualizado cada semana.",
+    profileCta: "Ver perfil en TikTok",
+    profileUrl: "https://www.tiktok.com/@samuelmanzanaresv",
   },
 
   contact: {

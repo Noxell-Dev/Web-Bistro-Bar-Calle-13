@@ -34,6 +34,20 @@ const restaurantJsonLd = {
   },
   hasMap: es.site.mapsUrl,
   sameAs: es.site.social.map((s) => s.href),
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "12:30",
+      closes: "16:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "20:30",
+      closes: "23:59",
+    },
+  ],
 };
 
 const faqJsonLd = {

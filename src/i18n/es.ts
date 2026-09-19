@@ -169,6 +169,17 @@ export const es = {
     text: "Llámanos para reservar mesa, preguntar por la carta o encargar para un grupo. Te atendemos personalmente.",
     cta: "Llamar al 673 895 151",
     followUs: "Síguenos",
+    hoursTitle: "Horario",
+    closedLabel: "Cerrado",
+    hours: [
+      { day: "Lunes", time: "12:30 – 16:00 · 20:30 – 24:00" },
+      { day: "Martes", time: "Cerrado" },
+      { day: "Miércoles", time: "12:30 – 16:00 · 20:30 – 24:00" },
+      { day: "Jueves", time: "12:30 – 16:00 · 20:30 – 24:00" },
+      { day: "Viernes", time: "12:30 – 16:00 · 20:30 – 24:00" },
+      { day: "Sábado", time: "12:30 – 16:00 · 20:30 – 24:00" },
+      { day: "Domingo", time: "12:30 – 16:00 · 20:30 – 24:00" },
+    ],
   },
 
   footer: {

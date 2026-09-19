@@ -23,7 +23,20 @@ const contact = es.contact;
       </svg>
       {contact.cta}
     </a>
-    <div class="mt-6 flex flex-col items-center gap-5">
+    <div class="mx-auto mt-10 max-w-xl rounded-2xl border border-white/15 bg-white/5 p-6 text-left sm:p-8">
+      <h3 class="font-display text-xl font-bold">{contact.hoursTitle}</h3>
+      <dl class="mt-4 divide-y divide-white/10">
+        {contact.hours.map((h) => (
+          <div class="flex items-baseline justify-between gap-4 py-2.5">
+            <dt class="font-semibold text-white/90">{h.day}</dt>
+            <dd class={h.time === contact.closedLabel ? "font-semibold text-accent" : "text-white/70"}>
+              {h.time}
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+    <div class="mt-10 flex flex-col items-center gap-5">
       <a
         href={es.site.mapsUrl}
         target="_blank"

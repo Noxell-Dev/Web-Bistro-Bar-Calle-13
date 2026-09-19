@@ -16,8 +16,8 @@ export const reviews: Review[] = [
     stars: 5,
   },
   {
-    name: 'A C',
-    text: 'Hemos ido hoy por primera vez y hemos comido súper bien, estaba todo muy bueno. Samuel ha sido muy agradable con nosotros, un buen trato y atención que se agradece mucho. El chico de la barra Javier también nos ha dado un buen servicio. El calamar merece ir a probarlo, la tostada muy buena y todo lo que hemos pedido, la tarta de queso casera de las mejores que he probado. Volveremos a ir que tenemos que probar muchas más cositas de la carta. Gracias chicos.',
+    name: 'Estefania Estefy',
+    text: 'Hay sitios donde simplemente comes bien… y luego están lugares como Bistron Calle 13, donde además te hacen sentir especial. Desde el primer momento el trato fue cercano, amable y lleno de atención a cada detalle. El ambiente es precioso y acogedor, de esos sitios donde apetece quedarse horas disfrutando. La comida estaba espectacular, hecha con cariño y con una calidad que se nota en cada plato. Todo cuidado al detalle, desde la presentación hasta el sabor. Da gusto encontrar un lugar donde trabajan con tanta pasión y hacen que la experiencia sea tan bonita. Sin duda, uno de esos sitios que cuando te vas ya estás pensando en volver. Totalmente recomendado ❤️',
     stars: 5,
   },
   {

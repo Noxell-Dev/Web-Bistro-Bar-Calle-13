@@ -166,8 +166,7 @@ export const es = {
   },
 
   tiktok: {
-    eyebrow: "Vídeos",
-    title: "La casa, en vídeo",
+    title: "Vídeos",
     text: "Lo último de nuestro TikTok, actualizado cada semana.",
     profileCta: "Ver perfil en TikTok",
     profileUrl: "https://www.tiktok.com/@samuelmanzanaresv",

@@ -10,61 +10,123 @@ const ratingPercent = (site.googleRating.value / 5) * 100;
 
 const starPath =
   "M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z";
+const stars = Array.from({ length: 5 });
 ---
 
 <section id="resenas" class="bg-brand-deep py-16 text-white sm:py-24" aria-labelledby="resenas-title">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <p class="text-sm font-semibold tracking-wide text-accent uppercase">{t.eyebrow}</p>
-    <h2 id="resenas-title" class="mt-2 font-display text-3xl font-bold sm:text-4xl">
-      {t.title}
-    </h2>
-
-    <div class="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
-      <p class="font-display text-6xl font-bold sm:text-7xl">{ratingDisplay}</p>
+    <div class="flex flex-wrap items-end justify-between gap-6">
       <div>
-        <span class="relative inline-flex" role="img" aria-label={`${ratingDisplay} de 5 estrellas`}>
-          <span class="flex gap-1 text-white/20" aria-hidden="true">
-            {Array.from({ length: 5 }).map(() => (
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <p class="text-sm font-semibold tracking-wide text-accent uppercase">{t.eyebrow}</p>
+        <h2 id="resenas-title" class="mt-2 font-display text-3xl font-bold sm:text-4xl">
+          {t.title}
+        </h2>
+        <div class="mt-6 flex items-center gap-5">
+          <p class="font-display text-5xl font-bold sm:text-6xl">{ratingDisplay}</p>
+          <div>
+            <span class="relative inline-flex" role="img" aria-label={`${ratingDisplay} de 5 estrellas`}>
+              <span class="flex gap-1 text-white/20" aria-hidden="true">
+                {stars.map(() => (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d={starPath} />
+                  </svg>
+                ))}
+              </span>
+              <span
+                class="absolute inset-y-0 left-0 overflow-hidden"
+                style={`width: ${ratingPercent}%`}
+                aria-hidden="true"
+              >
+                <span class="flex w-max gap-1 text-amber-400">
+                  {stars.map(() => (
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d={starPath} />
+                    </svg>
+                  ))}
+                </span>
+              </span>
+            </span>
+            <p class="mt-1">
+              <a
+                href={site.reviewsUrl}
+                target="_blank"
+                rel="noopener"
+                class="font-semibold text-white/80 underline decoration-white/30 underline-offset-4 transition-colors hover:text-white"
+              >
+                {site.googleRating.reviewCount} {t.googleLabel}
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <button
+          id="reviews-prev"
+          type="button"
+          aria-label="Ver reseñas anteriores"
+          class="grid size-11 place-items-center rounded-full border border-white/20 text-white transition-colors hover:bg-white/10"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M19 12H5" />
+            <path d="m12 19-7-7 7-7" />
+          </svg>
+        </button>
+        <button
+          id="reviews-next"
+          type="button"
+          aria-label="Ver reseñas siguientes"
+          class="grid size-11 place-items-center rounded-full border border-white/20 text-white transition-colors hover:bg-white/10"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-auto mt-10 max-w-6xl px-4 sm:px-6">
+    <div
+      id="reviews-track"
+      role="region"
+      aria-label="Reseñas de clientes"
+      class="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+    >
+      {reviews.map((review) => (
+        <article
+          data-review-card
+          class="w-[85%] shrink-0 snap-start rounded-2xl bg-paper p-6 text-ink sm:w-[55%] sm:p-8 lg:w-[38%]"
+        >
+          <div class="flex gap-1 text-amber-500" role="img" aria-label="5 de 5 estrellas">
+            {stars.map(() => (
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d={starPath} />
               </svg>
             ))}
-          </span>
-          <span class="absolute inset-y-0 left-0 overflow-hidden" style={`width: ${ratingPercent}%`} aria-hidden="true">
-            <span class="flex w-max gap-1 text-amber-400">
-              {Array.from({ length: 5 }).map(() => (
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                  <path d={starPath} />
-                </svg>
-              ))}
-            </span>
-          </span>
-        </span>
-        <p class="mt-2">
-          <a
-            href={site.reviewsUrl}
-            target="_blank"
-            rel="noopener"
-            class="font-semibold text-white/80 underline decoration-white/30 underline-offset-4 transition-colors hover:text-white"
-          >
-            {site.googleRating.reviewCount} {t.googleLabel}
-          </a>
-        </p>
-      </div>
-    </div>
-
-    <ol class="mt-12 max-w-3xl divide-y divide-dashed divide-white/15">
-      {reviews.map((review) => (
-        <li class="py-8 first:pt-0 last:pb-0">
-          <span aria-hidden="true" class="font-display text-5xl leading-none text-accent">“</span>
-          <blockquote class="mt-1 font-display text-xl leading-relaxed text-white/90 italic sm:text-2xl">
-            {review.text}
+          </div>
+          <blockquote class="mt-4 font-display text-lg leading-relaxed italic">
+            “{review.text}”
           </blockquote>
-          <p class="mt-4 text-sm font-semibold tracking-wide text-white/60 uppercase">
+          <p class="mt-5 text-sm font-semibold tracking-wide text-muted uppercase">
             {review.name} <span class="font-normal normal-case">· {t.sourceLabel}</span>
           </p>
-        </li>
+        </article>
       ))}
-    </ol>
+    </div>
   </div>
 </section>
+
+<script>
+  const track = document.getElementById("reviews-track");
+  const prev = document.getElementById("reviews-prev");
+  const next = document.getElementById("reviews-next");
+
+  const cardStep = () => {
+    const card = track?.querySelector("[data-review-card]");
+    return card ? card.getBoundingClientRect().width + 24 : 320;
+  };
+
+  prev?.addEventListener("click", () => track?.scrollBy({ left: -cardStep(), behavior: "smooth" }));
+  next?.addEventListener("click", () => track?.scrollBy({ left: cardStep(), behavior: "smooth" }));
+</script>

@@ -30,7 +30,8 @@ Convenciones del proyecto para quien (o lo que) lo toque en el futuro.
   `#b3271e`, `cream`, `ink`; `font-display`, `font-sans`) + estilos base
   (foco visible, punteado de carta `.leader`, `scroll-margin` para anchors).
 - `public/` — favicons + `site.webmanifest` + `robots.txt` en raíz;
-  imágenes en `public/images/` (`logo-calle13.webp` para la web, `og-calle13.png` para OG).
+  imágenes en `public/images/` (`logo-calle13.webp` para la web, `og-calle13.png` para OG,
+  `salon-calle13.webp` como fondo del hero).
 
 ## Idiomas y textos
 

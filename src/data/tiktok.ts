@@ -10,12 +10,8 @@ export interface TiktokVideo {
 
 export const tiktokProfileUrl = "https://www.tiktok.com/@samuelmanzanaresv";
 
-/** Los 3 vídeos más recientes del perfil. */
+/** Los 3 últimos vídeos subidos (se omiten los fijados/anclados). */
 export const tiktokVideos: TiktokVideo[] = [
-  {
-    id: "7597915661003803926",
-    url: "https://www.tiktok.com/@samuelmanzanaresv/video/7597915661003803926",
-  },
   {
     id: "7595959831614229782",
     url: "https://www.tiktok.com/@samuelmanzanaresv/video/7595959831614229782",
@@ -23,5 +19,9 @@ export const tiktokVideos: TiktokVideo[] = [
   {
     id: "7686558795022994710",
     url: "https://www.tiktok.com/@samuelmanzanaresv/video/7686558795022994710",
+  },
+  {
+    id: "7685466251379985686",
+    url: "https://www.tiktok.com/@samuelmanzanaresv/video/7685466251379985686",
   },
 ];

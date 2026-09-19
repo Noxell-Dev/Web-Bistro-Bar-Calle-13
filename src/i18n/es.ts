@@ -67,7 +67,7 @@ export const es = {
       { value: "+60", label: "platos en carta" },
       { value: "2,50 €", label: "tapas desde" },
       { value: "100%", label: "postres de la casa" },
-      { value: "2", label: "mundos: el mar y la dehesa" },
+      { value: "6", label: "días a la semana" },
     ],
   },
 

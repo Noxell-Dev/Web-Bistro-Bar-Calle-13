@@ -34,7 +34,7 @@ const t = es.tiktok;
       <div
         id="videos-grid"
         data-videos={JSON.stringify(tiktokVideos)}
-        class="mt-10 grid gap-8 md:grid-cols-3"
+        class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
       >
         {tiktokVideos.map(() => (
           <div class="flex justify-center" aria-hidden="true">
@@ -63,7 +63,7 @@ const t = es.tiktok;
             class="tiktok-embed"
             cite="${v.url}"
             data-video-id="${v.id}"
-            style="max-width: 605px; min-width: 325px;"
+            style="max-width: 605px; min-width: min(325px, 100%);"
           >
             <section>
               <a target="_blank" title="@samuelmanzanaresv" href="${v.url}">

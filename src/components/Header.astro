@@ -25,7 +25,7 @@ const { nav, cta, menuOpen, menuClose } = es.header;
         </span>
       </a>
 
-      <nav class="hidden md:block" aria-label="Navegación principal">
+      <nav class="hidden lg:block" aria-label="Navegación principal">
         <ul class="flex items-center gap-7">
           {
             nav.map((item) => (
@@ -56,7 +56,7 @@ const { nav, cta, menuOpen, menuClose } = es.header;
         <button
           id="menu-btn"
           type="button"
-          class="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-lg text-ink hover:bg-cream"
+          class="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-lg text-ink hover:bg-cream"
           aria-expanded="false"
           aria-controls="mobile-menu"
           aria-label={menuOpen}
@@ -74,7 +74,7 @@ const { nav, cta, menuOpen, menuClose } = es.header;
     </div>
   </div>
 
-  <div id="mobile-menu" class="hidden md:hidden border-t border-line bg-paper" role="dialog" aria-label="Menú de navegación">
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-line bg-paper" role="dialog" aria-label="Menú de navegación">
     <nav aria-label="Navegación móvil">
       <ul class="px-4 py-3 space-y-1">
         {

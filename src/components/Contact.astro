@@ -18,7 +18,7 @@ const contact = es.contact;
     </div>
     <a
       href={es.site.phoneHref}
-      class="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-xl font-bold text-brand-deep shadow-lg hover:bg-cream transition-colors"
+      class="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-lg font-bold text-brand-deep shadow-lg hover:bg-cream transition-colors whitespace-nowrap sm:px-8 sm:py-4 sm:text-xl"
     >
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -29,7 +29,7 @@ const contact = es.contact;
       <h3 class="font-display text-xl font-bold">{contact.hoursTitle}</h3>
       <dl class="mt-4 divide-y divide-white/10">
         {contact.hours.map((h) => (
-          <div class="flex items-baseline justify-between gap-4 py-2.5">
+          <div class="flex flex-col gap-0.5 py-2.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
             <dt class="font-semibold text-white/90">{h.day}</dt>
             <dd class={h.time === contact.closedLabel ? "font-semibold text-accent-soft" : "text-white/70"}>
               {h.time}
@@ -43,9 +43,9 @@ const contact = es.contact;
         href={es.site.mapsUrl}
         target="_blank"
         rel="noopener"
-        class="inline-flex items-center gap-2 text-lg text-white/80 underline decoration-white/30 underline-offset-4 transition hover:text-white"
+        class="inline-flex items-start gap-2 text-lg text-white/80 underline decoration-white/30 underline-offset-4 transition hover:text-white"
       >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="mt-1 shrink-0">
           <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
           <circle cx="12" cy="10" r="3" />
         </svg>

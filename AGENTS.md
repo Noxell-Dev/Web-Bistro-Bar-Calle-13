@@ -58,6 +58,15 @@ Convenciones del proyecto para quien (o lo que) lo toque en el futuro.
   claras/oscuras sin ola se usa `border-t-2 border-brand-bright` (contacto).
 - Micro-interacciones mínimas (hover en CTAs, rotación del `+` del FAQ). Respetar
   `prefers-reduced-motion` (ya contemplado en el CSS).
+- Responsive (revisado 2026-09-20 con capturas en 320/390/768/1440): la nav de
+  escritorio y la hamburguesa cambian en `lg` (en tablet el CTA «Llamar» + nav no
+  cabían y el botón se salía de la pantalla); las tarjetas de la carta llevan
+  `min-w-0` (la rejilla hacía blowout y la página medía 399 px de ancho en móvil);
+  las filas con media/ración entera apilan el precio bajo el nombre en `<sm`
+  (mantienen el punteado en `sm+`); el CTA de contacto no parte el teléfono en
+  dos líneas (`whitespace-nowrap`, más pequeño en móvil); el horario apila
+  día/hora en móvil; los embeds de TikTok usan `min-width: min(325px, 100%)` y la
+  rejilla es `sm:grid-cols-2 lg:grid-cols-3`.
 - Animaciones (punto 11 del prompt): una sola variante de entrada (fade + translateY 12px)
   con `IntersectionObserver` en `src/scripts/reveal.ts` (clase `.reveal` en `global.css`,
   stagger con `--reveal-delay`, count-up en `[data-countup]`, fade de imágenes con

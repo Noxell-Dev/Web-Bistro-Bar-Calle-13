@@ -46,6 +46,11 @@ Convenciones del proyecto para quien (o lo que) lo toque en el futuro.
 - La carta imita la carta impresa: nombre … punteado … precio (clase `.leader`).
 - Micro-interacciones mínimas (hover en CTAs, rotación del `+` del FAQ). Respetar
   `prefers-reduced-motion` (ya contemplado en el CSS).
+- Animaciones (punto 11 del prompt): una sola variante de entrada (fade + translateY 12px)
+  con `IntersectionObserver` en `src/scripts/reveal.ts` (clase `.reveal` en `global.css`,
+  stagger con `--reveal-delay`, count-up en `[data-countup]`, fade de imágenes con
+  `[data-fade]`). Sin JS el contenido es visible (gate `html.js`); el header gana sombra
+  al hacer scroll (`#site-header.is-scrolled`, gestionado en `src/scripts/site.ts`).
 
 ## Verificación
 

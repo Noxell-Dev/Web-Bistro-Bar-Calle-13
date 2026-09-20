@@ -100,3 +100,76 @@ details.faq-item[open] > summary::after {
 section[id] {
   scroll-margin-top: 5.5rem;
 }
+
+/* Punto 11 del prompt: animaciones sutiles, rápidas y accesibles.
+   Una sola variante de entrada en toda la página: fade + translateY(12px).
+   El gate `html.js` garantiza que sin JavaScript el contenido es visible. */
+.reveal {
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(12px);
+}
+html.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Entrada del contenido del hero (above the fold, sin IntersectionObserver) */
+@keyframes hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+html.js .hero-enter {
+  animation: hero-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Header: sombra al hacer scroll (variante "compacta con blur y sombra";
+   el blur ya lo lleva de base) */
+#site-header {
+  transition: box-shadow 0.2s ease-out;
+}
+#site-header.is-scrolled {
+  box-shadow: 0 6px 20px rgb(8 58 92 / 0.14);
+}
+
+/* Enlaces del nav: subrayado que crece desde la izquierda (solo transform) */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-brand);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease-out;
+}
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* Imágenes con fade-in al cargar (la galería reserva aspect-ratio en el HTML) */
+html.js img[data-fade] {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+html.js img[data-fade].is-loaded {
+  opacity: 1;
+}

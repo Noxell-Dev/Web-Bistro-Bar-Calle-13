@@ -35,3 +35,12 @@ mobileMenu?.querySelectorAll(".mobile-link").forEach((link) => {
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") setMenu(false);
 });
+
+// Punto 11 del prompt: el header gana sombra al hacer scroll
+// (variante "compacta con blur y sombra"; el blur ya lo lleva de base).
+const header = document.getElementById("site-header");
+function onScroll(): void {
+  header?.classList.toggle("is-scrolled", window.scrollY > 40);
+}
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();

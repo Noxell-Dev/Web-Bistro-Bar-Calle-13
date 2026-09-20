@@ -7,8 +7,9 @@ Convenciones del proyecto para quien (o lo que) lo toque en el futuro.
 - Astro 7 + TypeScript estricto + Tailwind CSS v4 (plugin de Vite). Sitio estático, sin backend.
   Sin `overrides` de Vite en `package.json`: Astro 7 usa Vite 8 y el pin a Vite 6
   (necesario en la época de Astro 5) rompe el build.
-- Fuentes autoalojadas con `@fontsource-variable/fraunces` e `@fontsource-variable/inter`
-  (importadas en `src/styles/global.css`). No añadir Google Fonts por `<link>`.
+- Fuentes autoalojadas con `@fontsource-variable/fraunces`, `@fontsource-variable/inter` y
+  `@fontsource-variable/caveat` (importadas en `src/styles/global.css`). No añadir Google
+  Fonts por `<link>`.
 - Sitemap: **nunca** crear `sitemap.xml` a mano; lo genera `@astrojs/sitemap` en cada build.
   `site` en `astro.config.mjs` es obligatorio y hoy es un dominio **provisional**
   (`https://bistrobarcalle13.es`): al confirmarlo, actualizar también `public/robots.txt`
@@ -26,9 +27,12 @@ Convenciones del proyecto para quien (o lo que) lo toque en el futuro.
   componentes. Proyecto monolingüe ES (ver README para añadir idiomas).
 - `src/scripts/site.ts` — solo el menú móvil. La FAQ usa `<details>`/`<summary>` nativos:
   no añadir JS para el acordeón.
-- `src/styles/global.css` — tokens en `@theme` (`brand` azul `#1e3a66`, `accent` rojo
-  `#b3271e`, `cream`, `ink`; `font-display`, `font-sans`) + estilos base
-  (foco visible, punteado de carta `.leader`, `scroll-margin` para anchors).
+- `src/styles/global.css` — tokens en `@theme` (paleta «Agua y Dehesa»: `brand` azul agua
+  `#0d6eae`, `brand-deep` `#0a4d7a`, `brand-bright` turquesa `#35b6e9`, `verde` dehesa
+  `#3c9a2f`, `verde-deep`, `accent` coral `#e2492f`, `accent-deep`, `accent-soft`,
+  `paper`/`cream`/`sand`/`mint`, `ink`, `muted`, `line`; `font-display`, `font-sans`,
+  `font-hand`) + estilos base (foco visible, punteado de carta `.leader`,
+  `scroll-margin` para anchors).
 - `public/` — favicons + `site.webmanifest` + `robots.txt` en raíz;
   imágenes en `public/images/` (`logo-calle13.webp` para la web, `og-calle13.png` para OG,
   `salon-calle13.webp` como fondo del hero).
@@ -40,10 +44,18 @@ Convenciones del proyecto para quien (o lo que) lo toque en el futuro.
 
 ## Diseño
 
-- Identidad: blanco + azul de marca + negro/rojo del logo (estilo grabado vintage).
-  Titulares Fraunces, cuerpo Inter. Iconos SVG de trazo minimalistas; **prohibidos los
-  emojis como iconos**.
-- La carta imita la carta impresa: nombre … punteado … precio (clase `.leader`).
+- Identidad «Agua y Dehesa»: azules del mural submarino + verde fuerte de la dehesa +
+  coral (el pulpo del mural), sobre fondos espuma/aqua/menta. El logo (rojo/negro,
+  grabado vintage) no se toca. Titulares Fraunces, cuerpo Inter, y **Caveat** (`font-hand`)
+  para precios y notas de la carta (tocho manuscrito, menos formal). Iconos SVG de trazo
+  minimalistas; **prohibidos los emojis como iconos**.
+- La carta: cada categoría es una «ficha» de papel (`bg-paper` redondeada) sobre fondo
+  `sand`; el título va en Fraunces con el color de la categoría (verde/azul/coral según
+  `catHues` en `Carta.astro`) y filete fino, sin chapitas ni fondos de color; precios y
+  notas en Caveat. El plato se une al precio con punteado (clase `.leader`).
+- Las costuras entre secciones usan **olas SVG** (mismo path repetido, `fill-*` del color
+  de la sección destino): hero → banda de datos y carta → reseñas. Entre secciones
+  claras/oscuras sin ola se usa `border-t-2 border-brand-bright` (contacto).
 - Micro-interacciones mínimas (hover en CTAs, rotación del `+` del FAQ). Respetar
   `prefers-reduced-motion` (ya contemplado en el CSS).
 - Animaciones (punto 11 del prompt): una sola variante de entrada (fade + translateY 12px)

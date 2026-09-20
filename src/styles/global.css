@@ -1,21 +1,29 @@
 @import "@fontsource-variable/fraunces";
 @import "@fontsource-variable/inter";
+@import "@fontsource-variable/caveat";
 @import "tailwindcss";
 
 @theme {
-  --color-paper: #f2f9fd;
-  --color-cream: #e3f1fa;
-  --color-sand: #cfe7f5;
+  /* Agua y Dehesa: azules del mural submarino + verde fuerte de la dehesa */
+  --color-paper: #f2fcfd;
+  --color-cream: #e4f6f8;
+  --color-sand: #d2eef2;
+  --color-mint: #e7f6e4;
   --color-ink: #1d1a15;
   --color-muted: #5d564a;
-  --color-brand: #0369a1;
-  --color-brand-deep: #0c4a6e;
-  --color-accent: #d92d20;
-  --color-accent-deep: #a11f14;
-  --color-line: #a9cfe8;
+  --color-brand: #0d6eae;
+  --color-brand-deep: #0a4d7a;
+  --color-brand-bright: #35b6e9;
+  --color-verde: #3c9a2f;
+  --color-verde-deep: #2a6e21;
+  --color-accent: #e2492f;
+  --color-accent-deep: #b2321d;
+  --color-accent-soft: #ffa898;
+  --color-line: #9ed4e8;
 
   --font-display: "Fraunces Variable", "Georgia", serif;
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-hand: "Caveat Variable", "Segoe Script", cursive;
 }
 
 html {
@@ -140,7 +148,7 @@ html.js .hero-enter {
   transition: box-shadow 0.2s ease-out;
 }
 #site-header.is-scrolled {
-  box-shadow: 0 6px 20px rgb(8 58 92 / 0.14);
+  box-shadow: 0 6px 20px rgb(10 77 122 / 0.18);
 }
 
 /* Enlaces del nav: subrayado que crece desde la izquierda (solo transform) */

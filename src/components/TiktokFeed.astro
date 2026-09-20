@@ -8,7 +8,7 @@ const t = es.tiktok;
 <section id="videos" class="bg-cream py-16 sm:py-24" aria-labelledby="videos-title">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
     <div class="reveal">
-      <p class="text-sm font-semibold tracking-wide text-accent uppercase">{t.eyebrow}</p>
+      <p class="text-sm font-semibold tracking-wide text-accent-deep uppercase">{t.eyebrow}</p>
       <div class="mt-2 flex flex-wrap items-end justify-between gap-4">
         <h2 id="videos-title" class="font-display text-3xl font-bold text-ink sm:text-4xl">
           {t.title}
@@ -52,7 +52,9 @@ const t = es.tiktok;
   const grid = document.getElementById("videos-grid");
   if (grid) {
     const loadVideos = () => {
-      const videos = JSON.parse(grid.dataset.videos || "[]");
+      const videos: { id: string; url: string }[] = JSON.parse(
+        grid.dataset.videos || "[]",
+      );
       grid.innerHTML = videos
         .map(
           (v) => `

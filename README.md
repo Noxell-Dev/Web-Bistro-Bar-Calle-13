@@ -13,7 +13,7 @@ dudas habituales y contacto telefónico directo para reservar.
 - TypeScript 5 (modo estricto, `astro/tsconfigs/strict`)
 - Tailwind CSS 4 (vía `@tailwindcss/vite`)
 - `@astrojs/sitemap` 6 — sitemap generado en cada build
-- Fuentes autoalojadas: Fraunces Variable (titulares) e Inter Variable (cuerpo), vía `@fontsource-variable/*`
+- Fuentes autoalojadas: Fraunces Variable (titulares), Inter Variable (cuerpo) y Caveat Variable (precios y notas manuscritas de la carta), vía `@fontsource-variable/*`
 - Idioma único: español
 
 ## Requisitos
@@ -76,8 +76,11 @@ src/
 - **Galería:** añade fotos a `public/images/galeria/` (WebP, ~900 px) y regístralas en
   `src/i18n/es.ts` (`gallery.images`) con `alt` descriptivo, `width` y `height`.
 - **Secciones:** componentes en `src/components/`, composición en `src/pages/index.astro`.
-- **Colores/tipos:** tokens en `src/styles/global.css` (`@theme`): `brand` (azul),
-  `accent` (rojo), `cream`, `ink`; `font-display` (Fraunces), `font-sans` (Inter).
+- **Colores/tipos:** tokens en `src/styles/global.css` (`@theme`), paleta «Agua y Dehesa»:
+  `brand` (azul agua), `brand-deep`/`brand-bright`, `verde` (dehesa), `accent` (coral),
+  fondos `paper`/`cream`/`sand`/`mint`, `ink`; `font-display` (Fraunces), `font-sans`
+  (Inter), `font-hand` (Caveat). Las categorías de la carta rotan verde/azul/coral en
+  `Carta.astro` (`catHues`).
 - **Idiomas:** hoy es monolingüe ES. Para añadir inglés: crear `src/i18n/en.ts` con la misma
   forma, páginas en `src/pages/en/` y activar el bloque `i18n` de `astro.config.mjs`
   (`prefixDefaultLocale: false`).

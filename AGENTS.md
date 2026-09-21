@@ -72,7 +72,7 @@ Convenciones del proyecto para quien (o lo que) lo toque en el futuro.
   dos líneas (`whitespace-nowrap`, más pequeño en móvil); el horario apila
   día/hora en móvil; los embeds de TikTok usan `min-width: min(325px, 100%)` y la
   rejilla es `sm:grid-cols-2 lg:grid-cols-3`.
-- Animaciones (punto 11 del prompt): una sola variante de entrada (fade + translateY 12px)
+- Animaciones (estándar noxell.dev): una sola variante de entrada (fade + translateY 12px)
   con `IntersectionObserver` en `src/scripts/reveal.ts` (clase `.reveal` en `global.css`,
   stagger con `--reveal-delay`, count-up en `[data-countup]`, fade de imágenes con
   `[data-fade]`). Sin JS el contenido es visible (gate `html.js`); el header gana sombra

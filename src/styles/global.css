@@ -109,8 +109,7 @@ section[id] {
   scroll-margin-top: 5.5rem;
 }
 
-/* Punto 11 del prompt: animaciones sutiles, rápidas y accesibles.
-   Una sola variante de entrada en toda la página: fade + translateY(12px).
+/* Entrada al hacer scroll: una sola variante en toda la página (fade + translateY(12px)).
    El gate `html.js` garantiza que sin JavaScript el contenido es visible. */
 .reveal {
   transition:

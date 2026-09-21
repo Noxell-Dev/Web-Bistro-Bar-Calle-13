@@ -14,7 +14,7 @@ export const site = {
   tagline: "Del mar y de la dehesa a tu mesa",
   phones: [{ display: "673 895 151", href: "tel:+34673895151" }],
   address: {
-    street: "Calle Padre Damaso, 3",
+    street: "Calle Padre Dámaso, 3",
     postalCode: "11370",
     locality: "Los Barrios",
     region: "Cádiz",

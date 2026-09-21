@@ -38,6 +38,10 @@ export const es = {
       "Tapas, carnes ibéricas a la brasa, pescaíto frito y postres caseros en Bistro Bar Calle 13. Del mar y de la dehesa a tu mesa. Reserva tu mesa: 673 895 151.",
   },
 
+  a11y: {
+    skipLink: "Saltar al contenido",
+  },
+
   header: {
     nav: [
       { label: "Carta", href: "#carta" },

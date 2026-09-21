@@ -74,6 +74,7 @@ const faqJsonLd = {
     <link rel="canonical" href={canonical} />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#0a4d7a" />
+    <meta name="generator" content={Astro.generator} />
 
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -100,6 +101,7 @@ const faqJsonLd = {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content="Logotipo de Bistro Bar Calle 13" />
 
     <script
       type="application/ld+json"
@@ -112,7 +114,7 @@ const faqJsonLd = {
       href="#contenido"
       class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:bg-brand focus:text-white focus:px-4 focus:py-2 focus:rounded"
     >
-      Saltar al contenido
+      {es.a11y.skipLink}
     </a>
     <Header />
     <main id="contenido">

@@ -1,5 +1,6 @@
 ---
 import { es } from "@i18n/es";
+import { site } from "@data/site";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import "@styles/global.css";
@@ -10,30 +11,31 @@ interface Props {
 }
 
 const { title = es.seo.title, description = es.seo.description } = Astro.props;
-const siteUrl = es.site.url;
+const siteUrl = site.url;
 const canonical = `${siteUrl}/`;
-const ogImage = `${siteUrl}/images/logo-calle13.webp`;
+const ogImage = `${siteUrl}/images/og-image.jpg`;
+const logoUrl = `${siteUrl}/images/logo-calle13.webp`;
 
 const restaurantJsonLd = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
-  name: es.site.name,
-  slogan: es.site.tagline,
+  name: site.name,
+  slogan: site.tagline,
   servesCuisine: ["Tapas", "Cocina andaluza", "Cocina mediterránea"],
-  telephone: "+34673895151",
+  telephone: site.phones[0].href.replace("tel:", ""),
   priceRange: "€€",
   url: canonical,
-  logo: ogImage,
+  logo: logoUrl,
   address: {
     "@type": "PostalAddress",
-    streetAddress: es.site.address.street,
-    postalCode: "11370",
-    addressLocality: "Los Barrios",
-    addressRegion: "Cádiz",
-    addressCountry: "ES",
+    streetAddress: site.address.street,
+    postalCode: site.address.postalCode,
+    addressLocality: site.address.locality,
+    addressRegion: site.address.region,
+    addressCountry: site.address.country,
   },
-  hasMap: es.site.mapsUrl,
-  sameAs: es.site.social.map((s) => s.href),
+  hasMap: site.mapsUrl,
+  sameAs: site.social.map((s) => s.url),
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
@@ -85,23 +87,25 @@ const faqJsonLd = {
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content={es.site.name} />
+    <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Logotipo de Bistro Bar Calle 13"
+      content="Bistro Bar Calle 13: del mar y de la dehesa a tu mesa"
     />
-    <meta property="og:locale" content={es.site.locale} />
+    <meta property="og:locale" content={site.locale} />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-    <meta name="twitter:image:alt" content="Logotipo de Bistro Bar Calle 13" />
+    <meta name="twitter:image:alt" content="Bistro Bar Calle 13: del mar y de la dehesa a tu mesa" />
 
     <script
       type="application/ld+json"

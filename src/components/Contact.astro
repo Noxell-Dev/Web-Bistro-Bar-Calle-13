@@ -1,5 +1,6 @@
 ---
 import { es } from "@i18n/es";
+import { site } from "@data/site";
 import SocialLinks from "@components/SocialLinks.astro";
 
 const contact = es.contact;
@@ -17,7 +18,7 @@ const contact = es.contact;
       </p>
     </div>
     <a
-      href={es.site.phoneHref}
+      href={site.phones[0].href}
       class="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-lg font-bold text-brand-deep shadow-lg hover:bg-cream transition-colors whitespace-nowrap sm:px-8 sm:py-4 sm:text-xl"
     >
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -40,7 +41,7 @@ const contact = es.contact;
     </div>
     <div class="mt-10 flex flex-col items-center gap-5">
       <a
-        href={es.site.mapsUrl}
+        href={site.mapsUrl}
         target="_blank"
         rel="noopener"
         class="inline-flex items-start gap-2 text-lg text-white/80 underline decoration-white/30 underline-offset-4 transition hover:text-white"
@@ -49,7 +50,7 @@ const contact = es.contact;
           <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
           <circle cx="12" cy="10" r="3" />
         </svg>
-        <span>{es.site.address.street}, {es.site.address.locality}</span>
+        <span>{site.address.street}, {site.address.postalCode} {site.address.locality}, {site.address.region}</span>
       </a>
       <div class="flex items-center gap-4">
         <span class="text-sm text-white/60">{contact.followUs}</span>

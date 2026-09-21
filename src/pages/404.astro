@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { es } from "../i18n/es";
+
+const title = `${es.e404.title} | Bistro Bar Calle 13`;
+---
+
+<BaseLayout title={title} description={es.e404.message}>
+  <section class="bg-paper py-28 sm:py-36">
+    <div class="mx-auto max-w-3xl px-4 text-center sm:px-6">
+      <p class="font-display text-7xl font-bold text-brand sm:text-8xl">404</p>
+      <h1 class="mt-4 font-display text-3xl font-bold text-ink sm:text-4xl">
+        {es.e404.title}
+      </h1>
+      <p class="mx-auto mt-4 max-w-xl text-lg text-muted">{es.e404.message}</p>
+      <a
+        href="/"
+        class="mt-8 inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3 font-semibold text-white transition-colors hover:bg-brand-deep"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M19 12H5M11 18l-6-6 6-6" />
+        </svg>
+        {es.e404.backHome}
+      </a>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { es } from "../i18n/es";
+import { site } from "../data/site";
+
+const title = `Aviso legal | ${site.name}`;
+const description = `Aviso legal de ${site.name}, bistro bar en Los Barrios (Cádiz). Datos del titular y condiciones de uso de la web.`;
+const fullAddress = `${site.address.street}, ${site.address.postalCode} ${site.address.locality} (${site.address.region})`;
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="bg-paper py-24 sm:py-32">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6">
+      <a href="/" class="mb-8 inline-flex items-center gap-2 font-semibold text-brand hover:underline">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M19 12H5M11 18l-6-6 6-6" />
+        </svg>
+        {es.legal.backHome}
+      </a>
+      <h1 class="font-display text-4xl font-bold text-ink sm:text-5xl">Aviso legal</h1>
+      <div class="mt-8 space-y-6 leading-relaxed text-ink/75">
+        <section>
+          <h2 class="mb-2 font-display text-xl font-bold text-ink">1. Datos del titular</h2>
+          <p>
+            Esta web pertenece a {site.name}, con domicilio en {fullAddress},
+            y teléfono de contacto {site.phones[0].display}.
+          </p>
+        </section>
+        <section>
+          <h2 class="mb-2 font-display text-xl font-bold text-ink">2. Objeto</h2>
+          <p>
+            Esta página tiene carácter informativo: presenta la carta, los servicios
+            y los datos de contacto del negocio. No se realiza venta online a través
+            de la web; las reservas se gestionan por teléfono.
+          </p>
+        </section>
+        <section>
+          <h2 class="mb-2 font-display text-xl font-bold text-ink">3. Propiedad intelectual</h2>
+          <p>
+            Los contenidos de esta web (textos, logotipo e imágenes) pertenecen a {site.name}
+            o a sus legítimos titulares. No está permitida su reproducción sin autorización
+            expresa.
+          </p>
+        </section>
+        <section>
+          <h2 class="mb-2 font-display text-xl font-bold text-ink">4. Enlaces externos</h2>
+          <p>
+            Esta web puede enlazar a redes sociales y a servicios de mapas de terceros.
+            {site.name} no se responsabiliza de los contenidos ni de las políticas de
+            privacidad de esos sitios externos.
+          </p>
+        </section>
+        <section>
+          <h2 class="mb-2 font-display text-xl font-bold text-ink">5. Responsabilidad</h2>
+          <p>
+            Los precios y la disponibilidad de la carta pueden variar. Ante cualquier
+            duda, confirma tu reserva o tu pedido por teléfono.
+          </p>
+        </section>
+        <section>
+          <h2 class="mb-2 font-display text-xl font-bold text-ink">6. Legislación aplicable</h2>
+          <p>
+            Este aviso legal se rige por la legislación española. Para cualquier
+            controversia, las partes se someten a los juzgados y tribunales que
+            correspondan según la normativa vigente.
+          </p>
+        </section>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

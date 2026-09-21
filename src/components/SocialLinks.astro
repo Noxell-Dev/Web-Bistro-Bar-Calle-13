@@ -1,5 +1,5 @@
 ---
-import { es } from "@i18n/es";
+import { site } from "@data/site";
 
 interface Props {
   class?: string;
@@ -10,12 +10,12 @@ const { class: className = "" } = Astro.props;
 
 <div class:list={["flex items-center gap-4", className]}>
   {
-    es.site.social.map((s) => (
+    site.social.map((s) => (
       <a
-        href={s.href}
+        href={s.url}
         target="_blank"
         rel="noopener"
-        aria-label={`${s.label} de ${es.site.name}`}
+        aria-label={`${s.label} de ${site.name}`}
         class="opacity-70 transition hover:opacity-100"
       >
         {s.icon === "instagram" ? (

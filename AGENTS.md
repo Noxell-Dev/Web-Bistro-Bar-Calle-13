@@ -12,17 +12,21 @@ Convenciones del proyecto para quien (o lo que) lo toque en el futuro.
   Fonts por `<link>`.
 - Sitemap: **nunca** crear `sitemap.xml` a mano; lo genera `@astrojs/sitemap` en cada build.
   `site` en `astro.config.mjs` es obligatorio y es el dominio definitivo
-  (`https://calle13losbarrios.es`): si cambia, actualizar también `public/robots.txt`
-  y `src/i18n/es.ts` (`site.url`).
+  (`https://calle13losbarrios.es`): si cambia, actualizar también `src/data/site.ts`
+  (`site.url`). El `robots.txt` no vive en el repo: se gestiona a nivel de Cloudflare.
 
 ## Estructura
 
-- `src/components/` — un componente por sección: `Header`, `Hero`, `Stats`, `Services`,
-  `Carta`, `Faq`, `Contact`, `Footer`. Composición en `src/pages/index.astro`.
+- `src/components/` — un componente por sección: `Header`, `Hero`, `Stats`,
+  `Carta`, `Gallery`, `Reviews`, `TiktokFeed`, `Faq`, `Contact`, `Footer`
+  (+ `SocialLinks` reutilizable). Composición en `src/pages/index.astro`.
 - `src/layouts/BaseLayout.astro` — `<head>` completo (SEO, OG/Twitter, canonical),
   JSON-LD (`Restaurant` + `FAQPage`) y slots de header/main/footer.
 - `src/data/menu.ts` — la carta (categorías, platos, precios). Es la única fuente de verdad
   de la carta; `Carta.astro` la renderiza entera.
+- `src/data/site.ts` — datos del negocio (nombre, teléfonos, dirección, URLs,
+  redes, valoración de Google). Única fuente de verdad; misma forma que en el resto
+  de proyectos. Los componentes y el JSON-LD del layout tiran siempre de aquí.
 - `src/i18n/es.ts` — **todos** los textos visibles de la interfaz. Nada hardcodeado en
   componentes. Proyecto monolingüe ES (ver README para añadir idiomas).
 - `src/scripts/site.ts` — solo el menú móvil. La FAQ usa `<details>`/`<summary>` nativos:
@@ -33,14 +37,15 @@ Convenciones del proyecto para quien (o lo que) lo toque en el futuro.
   `paper`/`cream`/`sand`/`mint`, `ink`, `muted`, `line`; `font-display`, `font-sans`,
   `font-hand`) + estilos base (foco visible, punteado de carta `.leader`,
   `scroll-margin` para anchors).
-- `public/` — favicons + `site.webmanifest` + `robots.txt` en raíz;
-  imágenes en `public/images/` (`logo-calle13.webp` para la web, `og-calle13.png` para OG,
-  `salon-calle13.webp` como fondo del hero).
+- `public/` — favicons + `site.webmanifest` en raíz;
+  imágenes en `public/images/` (`logo-calle13.webp` para la web, `og-image.jpg`
+  de 1200×630 para OG/Twitter, `hero-mar.webp` + `hero-dehesa.webp` con fundido
+  en el hero).
 
 ## Idiomas y textos
 
 - `es.ts` exporta el objeto `es` con la misma forma que usaría `en.ts`.
-- Teléfono del negocio: `site.phone` / `site.phoneHref` en `es.ts` (+ JSON-LD en el layout).
+- Teléfono del negocio: `site.phones` en `src/data/site.ts` (+ JSON-LD en el layout).
 
 ## Diseño
 

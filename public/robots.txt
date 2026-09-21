@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://calle13losbarrios.es/sitemap-index.xml

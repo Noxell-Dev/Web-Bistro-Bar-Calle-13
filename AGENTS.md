@@ -11,8 +11,8 @@ Convenciones del proyecto para quien (o lo que) lo toque en el futuro.
   `@fontsource-variable/caveat` (importadas en `src/styles/global.css`). No añadir Google
   Fonts por `<link>`.
 - Sitemap: **nunca** crear `sitemap.xml` a mano; lo genera `@astrojs/sitemap` en cada build.
-  `site` en `astro.config.mjs` es obligatorio y hoy es un dominio **provisional**
-  (`https://bistrobarcalle13.es`): al confirmarlo, actualizar también `public/robots.txt`
+  `site` en `astro.config.mjs` es obligatorio y es el dominio definitivo
+  (`https://calle13losbarrios.es`): si cambia, actualizar también `public/robots.txt`
   y `src/i18n/es.ts` (`site.url`).
 
 ## Estructura

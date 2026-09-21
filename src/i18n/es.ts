@@ -27,8 +27,8 @@ export const es = {
       { icon: "facebook", label: "Facebook", href: "https://www.facebook.com/profile.php?id=61570425544020" },
       { icon: "tiktok", label: "TikTok", href: "https://www.tiktok.com/@samuelmanzanaresv" },
     ],
-    // Dominio PROVISIONAL: confirmar el definitivo con el negocio.
-    url: "https://bistrobarcalle13.es",
+    // Dominio definitivo del negocio.
+    url: "https://calle13losbarrios.es",
     locale: "es_ES",
   },
 

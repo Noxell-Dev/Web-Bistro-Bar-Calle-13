@@ -4,7 +4,7 @@ Landing page de **Bistro Bar Calle 13**, bistro & bar del **Grupo Hostelero Samu
 Su objetivo es informar: la carta completa con precios, los servicios del local, respuestas a
 dudas habituales y contacto telefónico directo para reservar.
 
-- **Producción (provisional):** https://bistrobarcalle13.es *(pendiente confirmar el dominio definitivo)*
+- **Producción:** https://calle13losbarrios.es
 - **Repo:** `Noxell-Dev/Web-Bistro-Bar-Calle-13`
 
 ## Tecnologías y versiones
@@ -43,9 +43,9 @@ Abre http://localhost:4321.
 Sitio 100 % estático. Se despliega publicando el contenido de `dist/` tras `npm run build`
 (en Vercel basta con importar el repo: framework preset *Astro*, sin variables de entorno).
 
-> **Dominio:** `astro.config.mjs` usa `https://bistrobarcalle13.es` como `site` (sitemap y
-> canonical). Es **provisional**: al confirmar el dominio definitivo hay que actualizarlo
-> también en `public/robots.txt` y `src/i18n/es.ts` (`site.url`).
+> **Dominio:** `astro.config.mjs` usa `https://calle13losbarrios.es` como `site` (sitemap y
+> canonical). Si el dominio cambia algún día, actualizarlo también en `public/robots.txt`
+> y `src/i18n/es.ts` (`site.url`).
 
 ## Estructura de carpetas
 

@@ -3,12 +3,17 @@ import { es } from "@i18n/es";
 import { site } from "@data/site";
 
 const { nav, cta, menuOpen, menuClose } = es.header;
+
+// En páginas que no son la home (404, aviso legal...), los enlaces a secciones
+// deben apuntar a la home; en la home se mantiene el ancla simple.
+const isHome = Astro.url.pathname === "/";
+const sectionHref = (hash: string) => (isHome ? hash : `/${hash}`);
 ---
 
 <header id="site-header" class="fixed inset-x-0 top-0 z-50 bg-paper/95 backdrop-blur border-b border-line">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
     <div class="flex h-16 items-center justify-between gap-4 sm:h-20">
-      <a href="#contenido" class="flex items-center gap-3 shrink-0" aria-label="Bistro Bar Calle 13 — inicio">
+      <a href={isHome ? "#contenido" : "/"} class="flex items-center gap-3 shrink-0" aria-label="Bistro Bar Calle 13 — inicio">
         <img
           src="/images/logo-calle13.webp"
           alt=""
@@ -32,7 +37,7 @@ const { nav, cta, menuOpen, menuClose } = es.header;
             nav.map((item) => (
               <li>
                 <a
-                  href={item.href}
+                  href={sectionHref(item.href)}
                   class="nav-link text-[0.95rem] font-medium text-ink/80 hover:text-brand transition-colors"
                 >
                   {item.label}
@@ -82,7 +87,7 @@ const { nav, cta, menuOpen, menuClose } = es.header;
           nav.map((item) => (
             <li>
               <a
-                href={item.href}
+                href={sectionHref(item.href)}
                 class="mobile-link block rounded-lg px-3 py-3 text-base font-medium text-ink hover:bg-cream"
               >
                 {item.label}

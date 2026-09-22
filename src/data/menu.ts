@@ -202,7 +202,6 @@ export const menu: MenuCategory[] = [
       { name: "Atún Rojo a la plancha", price: "25,00 €" },
       { name: "Pata de pulpo", price: "28,00 €" },
       { name: "Choco a la plancha", price: "s/p · 40 €/kg" },
-      { name: "Calaco a la plancha", price: "s/p" },
       { name: "Calamar a la plancha", price: "s/p · 50 €/kg" },
       { name: "Calamar frito Tik Tok", price: "s/p · 50 €/kg" },
     ],

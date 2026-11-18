@@ -18,6 +18,7 @@ export const es = {
   header: {
     nav: [
       { label: "Carta", href: "#carta" },
+      { label: "Navidad", href: "#navidad" },
       { label: "Galería", href: "#galeria" },
       { label: "Reseñas", href: "#resenas" },
       { label: "Vídeos", href: "#videos" },
@@ -57,6 +58,16 @@ export const es = {
       "Esto es lo que servimos cada día. Precios en euros, IVA incluido.",
     halfLabel: "1/2",
     fullLabel: "Ración",
+  },
+
+  navidad: {
+    eyebrow: "Navidad",
+    title: "Menús de Navidad",
+    subtitle:
+      "Tres menús para compartir en grupo estas Navidades, con un mínimo de 4 personas.",
+    dessertsLabel: "Postres",
+    drinksLabel: "Bebida incluida",
+    cta: "Llamar para reservar",
   },
 
   gallery: {
@@ -159,13 +170,13 @@ export const es = {
     hoursTitle: "Horario",
     closedLabel: "Cerrado",
     hours: [
-      { day: "Lunes", time: "12:30 – 16:00 · 20:30 – 24:00" },
+      { day: "Lunes", time: "12:30 – 16:30" },
       { day: "Martes", time: "Cerrado" },
-      { day: "Miércoles", time: "12:30 – 16:00 · 20:30 – 24:00" },
-      { day: "Jueves", time: "12:30 – 16:00 · 20:30 – 24:00" },
-      { day: "Viernes", time: "12:30 – 16:00 · 20:30 – 24:00" },
-      { day: "Sábado", time: "12:30 – 16:00 · 20:30 – 24:00" },
-      { day: "Domingo", time: "12:30 – 16:00 · 20:30 – 24:00" },
+      { day: "Miércoles", time: "12:30 – 16:30" },
+      { day: "Jueves", time: "12:30 – 16:30" },
+      { day: "Viernes", time: "12:30 – 16:30 · 20:00 – 24:00" },
+      { day: "Sábado", time: "12:30 – 24:00" },
+      { day: "Domingo", time: "12:30 – 20:30" },
     ],
   },
 

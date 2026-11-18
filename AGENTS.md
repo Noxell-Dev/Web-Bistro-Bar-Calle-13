@@ -18,15 +18,24 @@ Convenciones del proyecto para quien (o lo que) lo toque en el futuro.
 ## Estructura
 
 - `src/components/` — un componente por sección: `Header`, `Hero`, `Stats`,
-  `Carta`, `Gallery`, `Reviews`, `TiktokFeed`, `Faq`, `Contact`, `Footer`
+  `Carta`, `Navidad`, `Gallery`, `Reviews`, `TiktokFeed`, `Faq`, `Contact`, `Footer`
   (+ `SocialLinks` reutilizable). Composición en `src/pages/index.astro`.
 - `src/layouts/BaseLayout.astro` — `<head>` completo (SEO, OG/Twitter, canonical),
   JSON-LD (`Restaurant` + `FAQPage`) y slots de header/main/footer.
 - `src/data/menu.ts` — la carta (categorías, platos, precios). Es la única fuente de verdad
   de la carta; `Carta.astro` la renderiza entera.
+- `src/data/navidad.ts` — los menús de Navidad (35/45/55 €, transcripción de los
+  carteles del negocio). Única fuente de verdad; `Navidad.astro` los renderiza.
+  Sección festiva en verde pino (`pino`/`pino-deep` en `@theme`), entre la carta y
+  las reseñas; la ola inferior de `Carta.astro` usa `fill-pino` y la de
+  `Navidad.astro` `fill-brand-deep`.
 - `src/data/site.ts` — datos del negocio (nombre, teléfonos, dirección, URLs,
   redes, valoración de Google). Única fuente de verdad; misma forma que en el resto
   de proyectos. Los componentes y el JSON-LD del layout tiran siempre de aquí.
+- El horario vive en DOS sitios y hay que actualizar los dos a la vez:
+  `src/i18n/es.ts` (`contact.hours`, lo que ve el cliente) y el JSON-LD
+  `openingHoursSpecification` de `src/layouts/BaseLayout.astro` (lo que ve Google).
+  Si se desincronizan, la web dice una cosa y Google otra.
 - `src/i18n/es.ts` — **todos** los textos visibles de la interfaz. Nada hardcodeado en
   componentes. Proyecto monolingüe ES (ver README para añadir idiomas).
 - `src/scripts/site.ts` — solo el menú móvil. La FAQ usa `<details>`/`<summary>` nativos:
